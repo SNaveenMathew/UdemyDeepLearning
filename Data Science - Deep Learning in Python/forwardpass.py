@@ -5,13 +5,12 @@ from softmax import softmax
 
 def forwardpass(X, W1, b1, W2, b2, activation = "sigmoid"):
 	if(activation == "sigmoid"):
-		z = 1 / (1 + exp(-X.dot(W1) - b1))
-		z2 = 1 / (1 + exp(-z1.dot(W2) - b2))
+		z1 = 1 / (1 + exp(-X.dot(W1) - b1))
 	else:
-		z = tanh(X.dot(W1) + b1)
-		z2 = tanh(z.dot(W2) + b2)
+		z1 = tanh(X.dot(W1) + b1)
+	z2 = z1.dot(W2) + b2
 	ret = softmax(z2)
-	return ret
+	return ret, z1
 
 
 def accuracy(Y, P):
