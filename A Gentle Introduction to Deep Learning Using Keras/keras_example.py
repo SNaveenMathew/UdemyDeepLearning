@@ -28,7 +28,7 @@ model.compile(loss = "binary_crossentropy", optimizer = "adam", metrics = ["accu
 model.fit(X, Y, nb_epoch = 20, batch_size = 10)
 # Scoring the model
 scores = model.evaluate(X, Y)
-print(str(model.metrics[1]) + ": " + str(scores[1]*100))
+print(str(model.metrics[0]) + ": " + str(scores[0]*100))
 
 # Tuning the model: Number of layers
 model = Sequential()
@@ -40,7 +40,7 @@ model.add(Dense(1, init = "uniform", activation = 'sigmoid'))
 model.compile(loss = "binary_crossentropy", optimizer = "adam", metrics = ["accuracy"])
 model.fit(X, Y, nb_epoch = 20, batch_size = 10)
 scores = model.evaluate(X, Y)
-print(str(model.metrics[1]) + ": " + str(scores[1]*100))
+print(str(model.metrics[0]) + ": " + str(scores[0]*100))
 
 # Tuning the model: Number of neurons
 model = Sequential()
@@ -51,7 +51,7 @@ model.add(Dense(1, init = "uniform", activation = 'sigmoid'))
 model.compile(loss = "binary_crossentropy", optimizer = "adam", metrics = ["accuracy"])
 model.fit(X, Y, nb_epoch = 20, batch_size = 10)
 scores = model.evaluate(X, Y)
-print(str(model.metrics[1]) + ": " + str(scores[1]*100))
+print(str(model.metrics[0]) + ": " + str(scores[0]*100))
 
 # Tuning the model: Number of epochs part 1
 model = Sequential()
@@ -62,7 +62,7 @@ model.add(Dense(1, init = "uniform", activation = 'sigmoid'))
 model.compile(loss = "binary_crossentropy", optimizer = "adam", metrics = ["accuracy"])
 model.fit(X, Y, nb_epoch = 200, batch_size = 10)
 scores = model.evaluate(X, Y)
-print(str(model.metrics[1]) + ": " + str(scores[1]*100))
+print(str(model.metrics[0]) + ": " + str(scores[0]*100))
 
 # Tuning the model: Number of epochs part 2
 model = Sequential()
@@ -73,4 +73,4 @@ model.add(Dense(1, init = "uniform", activation = 'sigmoid'))
 model.compile(loss = "binary_crossentropy", optimizer = "adam", metrics = ["accuracy"])
 model.fit(X, Y, nb_epoch = 500, batch_size = 10)
 scores = model.evaluate(X, Y)
-print(str(model.metrics[1]) + ": " + str(scores[1]*100))
+print(str(model.metrics[0]) + ": " + str(scores[0]*100))
