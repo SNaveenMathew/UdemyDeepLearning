@@ -56,3 +56,6 @@ def get_gauss_cloud(pts_per_cloud = 50):
 	dat = np.concatenate(dat)
 	return centers, dat
 
+def error_rate(pred, trgt):
+    return np.mean(pred != trgt)
+
